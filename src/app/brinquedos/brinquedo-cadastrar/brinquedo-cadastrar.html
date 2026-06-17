@@ -1,1 +1,19 @@
-<p>brinquedo-cadastrar works!</p>
+<h1>Cadastro de Brinquedo</h1>
+
+<label for="modelo">Modelo</label>
+<input type="text" [(ngModel)]="brinquedo().modelo" id="modelo">
+
+<label for="marca">Marca</label>
+<select name="marca" [(ngModel)]="brinquedo().marca" id="marca">
+    <option value="mattel">Mattel</option>
+    <option value="estrela">Estrela</option>
+    <option value="lego">Lego</option>
+</select>
+
+<label for="preco">Preço</label>
+<input type="number" [(ngModel)]="brinquedo().preco" id="preco">
+
+<label for="quantidade">Quantidade</label>
+<input type="number" [(ngModel)]="brinquedo().quantidade" id="quantidade">
+
+<button (click)="salvar()">Salvar</button>
