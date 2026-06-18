@@ -1,1 +1,28 @@
-<p>brinquedo-listar works!</p>
+<h1>Brinquedos</h1>
+<a routerLink="/brinquedos/cadastrar">Cadastrar Brinquedo</a>
+<span>Quantidade: <span class="quantidade">{{brinquedos().length}}</span></span>
+<table>
+    <thead>
+        <tr>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Preço Unit.</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (brinquedo of brinquedos(); track brinquedo.id){
+            <tr>
+                <td>{{brinquedo.modelo}}</td>
+                <td>{{brinquedo.marca}}</td>
+                <td>{{brinquedo.preco}}</td>
+                <td>{{brinquedo.quantidade}}</td>
+                <td>
+                    <a class="editar" routerLink="/brinquedo/editar/{{brinquedo.id}}">Editar</a>
+                    <button class="apagar" (click)="apagar(brinquedo.id)">Apagar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
