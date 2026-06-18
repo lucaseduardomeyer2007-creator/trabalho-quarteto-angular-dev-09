@@ -1,1 +1,21 @@
-<p>brinquedo-editar works!</p>
+<h1>Editar Brinquedo</h1>
+
+<label for="modelo">Modelo</label>
+<input type="text" id="modelo" [(ngModel)]="brinquedo().modelo">
+
+<label for="marca">Marca</label>
+<select name="marca" [(ngModel)]="brinquedo().marca" id="marca">
+    <option value="mattel">Mattel</option>
+    <option value="estrela">Estrela</option>
+    <option value="lego">Lego</option>
+</select>
+
+<label for="preco">Preço</label>
+<input type="text" id="preco" [(ngModel)]="brinquedo().preco"> 
+
+<label for="quantidade">Quantidade</label>
+<input type="text" id="quantidade" [(ngModel)]="brinquedo().quantidade">
+
+
+
+<button (click)="salvar()">Salvar Alterações</button>
